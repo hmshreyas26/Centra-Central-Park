@@ -3,15 +3,15 @@ const app = express();
 const db = require('./db/database'); // This connects DB and creates tables
 
 // Import routes
-const productsRoutes = require('./routes/products');
-const ordersRoutes = require('./routes/orders');
+const productRoutes = require('./routes/product');
+const ordersRoutes = require('./routes/order');
 
 // Middleware to parse JSON
 app.use(express.json());
 
 // Use the routes
-app.use('/products', productsRoutes);
-app.use('/orders', ordersRoutes);
+app.use('/product', productRoutes);
+app.use('/order', ordersRoutes);
 
 // Start the server
 const PORT = 3000;
