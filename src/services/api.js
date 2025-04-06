@@ -1,12 +1,13 @@
-const API_BASE = 'http://localhost:3000';
+const API_BASE = 'http://localhost:8080';
 
 export const getProducts = async () => {
-  const res = await fetch(`${API_BASE}/products`);
+  const res = await fetch(`${API_BASE}/product`);
+  console.log('Fetched products:', res);
   return await res.json();
 };
 
 export const addProduct = async (product) => {
-  const res = await fetch(`${API_BASE}/products`, {
+  const res = await fetch(`${API_BASE}/product`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(product),
@@ -15,7 +16,7 @@ export const addProduct = async (product) => {
 };
 
 export const updateProduct = async (id, updatedProduct) => {
-  const res = await fetch(`${API_BASE}/products/${id}`, {
+  const res = await fetch(`${API_BASE}/product/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedProduct),
@@ -24,5 +25,5 @@ export const updateProduct = async (id, updatedProduct) => {
 };
 
 export const deleteProduct = async (id) => {
-  await fetch(`${API_BASE}/products/${id}`, { method: 'DELETE' });
+  await fetch(`${API_BASE}/product/${id}`, { method: 'DELETE' });
 };
