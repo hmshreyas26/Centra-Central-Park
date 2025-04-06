@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const db = require('./db/database'); // This connects DB and creates tables
+const setupSwagger = require('./swagger');
 
 // Import routes
 const productRoutes = require('./routes/product');
@@ -12,6 +13,8 @@ app.use(express.json());
 // Use the routes
 app.use('/product', productRoutes);
 app.use('/order', ordersRoutes);
+
+setupSwagger(app);
 
 // Start the server
 const PORT = 3000;

@@ -2,7 +2,39 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db/database');
 
-// POST /orders - Create a new order
+/**
+ * @swagger
+ * /order:
+ *   post:
+ *     summary: Create a new order
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - customerName
+ *               - address
+ *               - phoneNumber
+ *               - status
+ *               - createdAt
+
+ *             properties:
+ *               customerName:
+ *                 type: string
+ *               address:
+ *                 type: string
+ *               phoneNumber:
+ *                 type: string
+ *               status:
+ *                 type: string
+ *               createdAt:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Order created
+ */
 router.post('/', (req, res) => {
   const { customerName, address, phoneNumber, items } = req.body;
   const status = 'Pending';
@@ -32,7 +64,15 @@ router.post('/', (req, res) => {
   );
 });
 
-// GET /orders - Get all orders with their items
+/**
+ * @swagger
+ * /order:
+ *   get:
+ *     summary: Get all orders
+ *     responses:
+ *       200:
+ *         description: List of orders
+ */
 router.get('/', (req, res) => {
   db.all(`SELECT * FROM orders`, [], (err, orders) => {
     if (err) return res.status(500).json({ error: err.message });
