@@ -5,7 +5,7 @@ function App() {
   return (
 
     <div className='grid-container'>
-      <h1>Centra Instant Grocery Delivery System</h1>
+      <h1>Centra Central Park</h1>
       <Product />
       </div>
 
