@@ -11,7 +11,7 @@ const Products = () => {
   };
 
   useEffect(() => {
-    fetch();
+    fetchProducts();
   }, []);
 
   const handleChange = (e) => {
