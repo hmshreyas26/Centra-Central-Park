@@ -4,7 +4,7 @@ const ordersRoute = require('../backend/routes/order');
 const app = express();
 
 app.use(express.json());
-app.use('/order', ordersRoute);
+app.use('/', ordersRoute);
 
 describe('order API', () => {
   it('GET /order should return a 200 and array', async () => {
