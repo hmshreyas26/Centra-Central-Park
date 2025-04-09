@@ -6,7 +6,7 @@ const Products = () => {
   const [form, setForm] = useState({ name: '', category: '', price: '', stock: '' });
 
   const fetchProducts = async () => {
-    const data = await ();
+    const data = await getProducts();
     setProducts(data);
   };
 
