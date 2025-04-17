@@ -4,7 +4,7 @@ const db = require('./db/database'); // This connects DB and creates tables
 const setupSwagger = require('./swagger');
 
 // Import CORS
-const cors = require('cors');
+const cors = require
 
 // Import routes
 const productRoutes = require('./routes/product');
