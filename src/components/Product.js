@@ -70,7 +70,7 @@ const Products = () => {
           ) : (
           products.map(prod => (
             <tr key={prod.id}>
-              <td>{prod.}</td>
+              <td>{prod.id}</td>
               <td>{prod.name}</td>
               <td>{prod.category}</td>
               <td>{prod.price}</td>
