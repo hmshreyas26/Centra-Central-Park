@@ -47,7 +47,7 @@ const Products = () => {
       await updateProduct(id, { ...products.find(p => p.id === id), stock: parseInt(newStock) });
       fetchProducts();
     } catch (err) {
-      console.error('Error updating stock:', err);
+      console.error('Error updating :', err);
     }
   };
 
